@@ -46,6 +46,10 @@ public class Inputter {
         do{
             System.out.print("Enter student name: ");
             studentName = scanner.nextLine().trim();
+            if(studentName.isEmpty()){
+                System.out.println("Invalid student name, Enter again!");
+                continue;
+            }
             studentName = studentName.toUpperCase();
             studentName = studentName.charAt(0) + studentName.substring(1).toLowerCase();
             if(studentName.isEmpty() || !studentName.matches("^[a-zA-Z]*$")){
